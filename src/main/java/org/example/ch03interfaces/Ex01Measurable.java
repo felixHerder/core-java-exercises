@@ -15,6 +15,8 @@ public class Ex01Measurable {
 
         double averageSalary = average(employees);
         System.out.println(averageSalary);
+        double largestSalary = ((Employee) largest(employees)).getSalary();
+        System.out.println(largestSalary);
     }
 
     static double average(Measurable[] objects) {
@@ -24,5 +26,19 @@ public class Ex01Measurable {
         }
 
         return  total / objects.length;
+    }
+
+    static Measurable largest(Measurable[] objects) {
+        if(objects == null || objects.length == 0) {
+            return null;
+        }
+        Measurable largestMeasurable = objects[0];
+        for(Measurable obj : objects) {
+            if(largestMeasurable.getMeasure() < obj.getMeasure()) {
+                largestMeasurable = obj;
+            }
+        }
+
+        return largestMeasurable;
     }
 }
