@@ -28,4 +28,12 @@ public class Employee implements Person, Identified, Measurable {
     public double getMeasure() {
         return salary;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
 }
