@@ -19,6 +19,9 @@ package org.example.ch04inheritance;
 
 public class Ex01Point {
 
+    public Ex01Point() {
+    }
+
     public static void main(String[] args) {
         Point p1 = new Point(2, 3);
         Point p2;

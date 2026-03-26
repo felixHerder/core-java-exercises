@@ -12,14 +12,11 @@ public class Item {
     }
 
     public boolean equals(Object otherObject) {
-        // Must return false if the explicit parameter is null
-        if (otherObject == null) return false;
-        // Check that otherObject is a Item
-        if (getClass() != otherObject.getClass()) return false;
-        // Test whether the instance variables have identical values
-        var other = (Item) otherObject;
-        return Objects.equals(description, other.description)
-            && price == other.price;
+        if (otherObject instanceof Item other) {
+            return Objects.equals(description, other.description)
+                    && price == other.price;
+        }
+        return false;
     }
     
     public int hashCode() {
